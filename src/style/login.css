@@ -1,0 +1,149 @@
+/* Contenedor del Login - Diseño Horizontal Premium */
+.formLogin {
+  background: #ffffff;
+  display: flex;
+  flex-direction: row; /* Horizontal como registro */
+  width: 850px;
+  min-height: 500px;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+}
+
+/* Sección Izquierda Decorativa */
+.login-left {
+  flex: 1;
+  background: linear-gradient(135deg, rgba(31, 162, 209, 0.384), rgba(147, 173, 253, 0.9)), 
+              url('../img/formImg.jpg');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+  color: white;
+  text-align: center;
+}
+
+.logo-form {
+  width: 280px; /* Mucho más grande */
+  margin-bottom: 15px; /* Reducido espacio */
+  filter: brightness(0) invert(1) drop-shadow(0 4px 10px rgba(0,0,0,0.3)); /* Filtros combinados */
+}
+
+.login-left h3 {
+  font-size: 2.2rem; /* Un poco más grande para acompañar al logo */
+  font-weight: 800;
+  margin-bottom: 10px; /* Menos espacio */
+}
+
+.login-left p {
+  font-size: 1rem;
+  opacity: 0.9;
+  line-height: 1.5;
+}
+
+/* Sección Derecha Formulario */
+.login-right {
+  flex: 1.2;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Link de Registro arriba a la derecha */
+.already-account {
+  align-self: flex-end;
+  margin-bottom: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0;
+  line-height: 1.2;
+}
+
+.already-account p {
+  margin: 0;
+  font-size: 0.85rem;
+  color: #666;
+}
+
+.btn-link-login {
+  background: none;
+  border: none;
+  color: #4e73df;
+  font-size: 0.85rem;
+  font-weight: 700;
+  cursor: pointer;
+  padding: 0;
+}
+
+.btn-link-login:hover {
+  text-decoration: underline;
+}
+
+/* Título */
+.login-right h2 {
+  text-align: left;
+  margin-bottom: 30px;
+  color: #333;
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+
+/* Grupos de Formulario */
+.form-group-login {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+.form-group-login h4 {
+  margin: 0 0 8px 0;
+  font-size: 0.9rem;
+  color: #555;
+  font-weight: 600;
+}
+
+.form-group-login input {
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  background-color: #f8f9fc;
+  font-size: 0.95rem;
+  transition: 0.3s;
+}
+
+.form-group-login input:focus {
+  border-color: #4e73df;
+  outline: none;
+  box-shadow: 0 0 8px rgba(78, 115, 223, 0.2);
+}
+
+/* Botón de acción */
+.form-actions-login {
+  margin-top: auto;
+  padding-top: 20px;
+}
+
+.btn-primary-login {
+  width: 100%;
+  background-color: #4e73df;
+  color: white;
+  border: none;
+  padding: 14px;
+  border-radius: 12px;
+  font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: 0.3s;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.btn-primary-login:hover {
+  background-color: #2e59d9;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(78, 115, 223, 0.3);
+}

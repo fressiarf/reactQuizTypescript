@@ -1,0 +1,225 @@
+/* Se eliminó el selector body global para evitar conflictos en otras páginas */
+/* .registro-wrapper { ... } */
+
+/* Contenedor del formulario - Diseño Horizontal Premium */
+.formRegistro {
+  background: #ffffff;
+  display: flex;
+  flex-direction: row; /* Cambio a horizontal */
+  width: 900px; /* Más ancho para el split */
+  min-height: 550px;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+}
+
+/* Sección Izquierda Decorativa */
+.registro-left {
+  flex: 1;
+  /* Fondo con Imagen y Overlay de Degradado */
+  background: linear-gradient(135deg, rgba(31, 162, 209, 0.384), rgba(147, 173, 253, 0.9)), 
+              url('../img/FormGato.png');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+  color: white;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+/* Se eliminó .pets-decor-img ya que ahora es fondo */
+
+.logo-form {
+  width: 280px; /* Mucho más grande */
+  margin-bottom: 15px; /* Reducido espacio */
+  filter: brightness(0) invert(1) drop-shadow(0 4px 10px rgba(0,0,0,0.3)); /* Logo blanco con sombra */
+}
+
+.decor-box h3 {
+  font-size: 2.2rem;
+  font-weight: 800;
+  margin-bottom: 10px; /* Menos espacio */
+  line-height: 1.2;
+}
+
+.decor-box p {
+  font-size: 1.1rem;
+  opacity: 0.9;
+  line-height: 1.6;
+}
+
+/* Sección Derecha Formulario */
+.registro-right {
+  flex: 1.5;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.already-account {
+  align-self: flex-end;
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column; /* Uno arriba de otro */
+  align-items: flex-end; /* Alineados a la derecha */
+  gap: 0; /* Sin espacio entre líneas */
+  line-height: 1.2; /* Interlineado pegadito */
+}
+
+.already-account p {
+  margin: 0;
+  font-size: 0.85rem;
+  color: #666;
+}
+
+.already-account .btn-link-reg {
+  padding: 0; /* Quita rellenos extra para pegarlo más */
+  margin: 0;
+}
+
+.registro-right h2 {
+  text-align: left;
+  margin-bottom: 25px;
+  color: #333;
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+
+/* Grilla de Inputs */
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Dos columnas como en la imagen */
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group h4 {
+  margin: 0 0 8px 0;
+  font-size: 0.9rem;
+  color: #666;
+  font-weight: 600;
+}
+
+.form-group input {
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  background-color: #f8f9fc;
+  font-size: 0.95rem;
+  transition: 0.3s;
+}
+
+.form-group input:focus {
+  border-color: #4e73df;
+  background-color: #fff;
+  box-shadow: 0 0 8px rgba(78, 115, 223, 0.2);
+  outline: none;
+}
+
+/* Acciones y Botones */
+.form-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: auto;
+}
+
+.btn-primary-reg {
+  background-color: #4e73df;
+  color: white;
+  border: none;
+  padding: 14px;
+  border-radius: 12px;
+  font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: 0.3s;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.btn-primary-reg:hover {
+  background-color: #2e59d9;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(78, 115, 223, 0.3);
+}
+
+.btn-link-reg {
+  background: none;
+  border: none;
+  color: #4e73df;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn-link-reg:hover {
+  color: #1a3cb1;
+  text-decoration: underline;
+}
+
+/* Imagen de perfil estilos circulares (Ajustados para el nuevo layout) */
+.image-upload-container {
+  display: flex;
+  justify-content: flex-start; /* Alineado a la izquierda */
+  margin-bottom: 25px;
+}
+
+.btn-upload-circle {
+  position: relative;
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  cursor: pointer;
+  overflow: hidden;
+  border: 3px solid #f0f4f8;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+}
+
+.btn-upload-circle:hover {
+  transform: scale(1.05);
+  border-color: #4e73df;
+}
+
+.preview-circular {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.overlay-upload {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.overlay-upload span {
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.btn-upload-circle:hover .overlay-upload {
+  opacity: 1;
+}

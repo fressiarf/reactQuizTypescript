@@ -1,0 +1,109 @@
+/* CONTENEDOR GENERAL */
+.btnCerrarSesion{
+  background: white;
+  border: 2px solid #52478a;
+  color: #52478a;
+  padding: 8px 25px;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btnCerrarSesion:hover{
+  background: #52478a;
+  color: white;
+}
+
+.nav-container{
+   width: 100%;
+  background: white;
+  padding: 0px 40px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.1)
+}
+
+/* HEADER */
+.nav-header{
+   display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* CONTENEDOR LOGO */
+.logo-container{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* IMAGEN LOGO */
+.logo{
+  height: 80px;
+}
+
+/* TEXTO LOGO */
+.logo-container h1{
+  font-size: 20px;
+  color: #2c3e50;
+  font-weight: 600;
+}
+
+/* MENU */
+.nav{
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+/* LINKS */
+.nav a{
+  text-decoration: none;
+  color: #2c3e50;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+/* HOVER */
+.nav a:hover{
+  color: #27ae60;
+}
+
+.btnCerrarSesion:hover{
+  background: #18a1e0;
+}
+
+
+.nav-menu{
+  width: 100%;
+}
+
+.nav-links{
+  width: 100%;
+}
+
+.nav{
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  gap: 20px;
+}
+
+.nav-socials {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-right: 20px;
+  border-right: 2px solid #ecf0f1;
+  padding-right: 20px;
+}
+
+.nav-socials a {
+  color: #52478a;
+  transition: transform 0.2s, color 0.2s;
+}
+
+.nav-socials a:hover {
+  color: #1fa3d1;
+  transform: scale(1.1);
+}

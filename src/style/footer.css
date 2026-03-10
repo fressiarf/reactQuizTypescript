@@ -1,0 +1,113 @@
+.footer-container {
+    width: 100%;
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../img/footer.webp');
+    background-size: cover;
+    background-position: center;
+    padding: 60px 20px;
+    color: white;
+    margin-top: auto;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 40px;
+}
+
+.footer-logo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    flex: 1;
+    min-width: 250px;
+}
+
+.footer-logo img {
+    height: 80px;
+    filter: brightness(0) invert(1); /* Hace el logo blanco para que resalte */
+}
+
+.footer-logo p {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin: 0;
+}
+
+.footer-links, .footer-social {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    flex: 1;
+    min-width: 200px;
+}
+
+.footer-links h4, .footer-social h4 {
+    color: #1fa3d1;
+    margin-bottom: 5px;
+    font-size: 1.1rem;
+    font-weight: 700;
+}
+
+.footer-donaciones-horizontal {
+    width: 100%;
+    margin-bottom: 40px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.donaciones-row {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.donacion-card-inline {
+    flex: 1;
+    min-width: 220px;
+    background: rgba(255, 255, 255, 0.05); /* fondo con transparencia */
+    padding: 15px 20px;
+    border-radius: 12px;
+    border-left: 3px solid #1fa3d1;
+    text-align: left;
+}
+
+.donacion-card-inline strong {
+    color: white;
+    font-size: 1.05rem;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.donacion-card-inline p {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.9rem;
+    line-height: 1.4;
+    margin: 0;
+}
+
+.footer-links a, .footer-social a {
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover, .footer-social a:hover {
+    color: #1fa3d1;
+}
+
+@media (max-width: 768px) {
+    .footer-content {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+}

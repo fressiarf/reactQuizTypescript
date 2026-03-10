@@ -1,0 +1,130 @@
+/* SIDEBAR CONTAINER */
+.sidebar-container {
+  width: 260px;
+  height: 100vh;
+  background: white; /* Similar al Nav */
+  color: #2c3e50;
+  padding: 30px 0;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.05); /* Sutil como el Nav */
+  position: sticky;
+  top: 0;
+  transition: all 0.3s ease;
+  z-index: 1000;
+  border-right: 1px solid #eee;
+}
+
+/* HEADER DEL PANEL */
+.sidebar-header {
+  padding: 0 25px 25px;
+  border-bottom: 1px solid #eee;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.sidebar-header .logo {
+  height: 60px;
+  margin-bottom: 10px;
+}
+
+.sidebar-header h5 {
+  font-size: 0.9rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #52478a; /* Púrpura del botón de cerrar sesión */
+  margin: 0;
+}
+
+/* NAVEGACIÓN */
+.sidebar-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+/* LINKS INDIVIDUALES */
+.sidebar-link {
+  color: #2c3e50 !important;
+  padding: 12px 25px !important;
+  font-size: 0.95rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  border-left: 4px solid transparent;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* EFECTO HOVER */
+.sidebar-link:hover {
+  background: #f8f9fa;
+  color: #1fa3d1 !important; /* Celeste en lugar de verde */
+  border-left: 4px solid #1fa3d1;
+  padding-left: 30px !important;
+}
+
+/* ESTADO ACTIVO */
+.sidebar-link.active {
+  background: #f0faff; /* Fondo celeste muy clarito */
+  color: #1fa3d1 !important;
+  border-left: 4px solid #1fa3d1;
+  font-weight: 600;
+}
+
+/* DIVISOR */
+.sidebar-divider {
+  height: 1px;
+  background: #eee;
+  margin: 20px 25px;
+}
+
+/* FOOTER O ELEMENTOS DESHABILITADOS */
+.sidebar-link.disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+/* RESPONSIVIDAD BÁSICA */
+@media (max-width: 768px) {
+  .sidebar-container {
+    width: 80px;
+    padding: 20px 0;
+  }
+  
+  .sidebar-header h5, 
+  .sidebar-link span {
+    display: none;
+  }
+  
+  .sidebar-link {
+    justify-content: center;
+    padding: 15px !important;
+    border-left: none;
+    border-bottom: 3px solid transparent;
+  }
+  
+  .sidebar-link:hover {
+    padding-left: 15px !important;
+    border-left: none;
+    border-bottom: 3px solid #2ecc71;
+  }
+}
+
+/* FOOTER CON BOTÓN DE SALIR */
+.sidebar-footer {
+  margin-top: auto;
+  padding: 20px 25px;
+  border-top: 1px solid #eee;
+  display: flex;
+  justify-content: center;
+}
+
+.sidebar-footer .btnCerrarSesion {
+  width: 80%;
+  text-align: center;
+}
+

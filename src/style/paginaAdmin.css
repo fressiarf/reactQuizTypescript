@@ -1,0 +1,211 @@
+.admin-title {
+    border-bottom: 3px solid #29b6d1;
+    padding-bottom: 10px;
+    color: #2c3e50;
+    margin-bottom: 20px;
+}
+
+/* DRAWER - ESTRUCTURA CRITICA */
+div.drawer-overlay {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    width: 100vw !important;
+    height: 100vh !important;
+    background: rgba(0, 0, 0, 0.7) !important;
+    display: flex !important;
+    justify-content: flex-end !important;
+    align-items: stretch !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    z-index: 9999999 !important;
+    pointer-events: all !important;
+}
+
+div.drawer-content {
+    width: 260px !important; /* Aumentado a un tamaño usable */
+    min-width: 260px !important;
+    max-width: 90% !important;
+    height: 100vh !important;
+    background-color: white !important;
+    padding: 20px !important; 
+    box-shadow: -10px 0 50px rgba(0,0,0,0.5) !important;
+    display: flex !important;
+    flex-direction: column !important;
+    z-index: 10000000 !important;
+    position: fixed !important;
+    right: 0 !important;
+    top: 0 !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    transition: transform 0.3s ease;
+    overflow-y: auto !important;
+}
+
+/* Estilos de texto restaurados */
+.drawer-content h3 {
+    font-size: 1.2rem !important;
+    margin-bottom: 20px !important;
+}
+
+.drawer-content label {
+    display: block !important;
+    margin-top: 10px !important;
+    font-weight: bold !important;
+    font-size: 0.9rem !important;
+}
+
+.drawer-content input, 
+.drawer-content select {
+    width: 100% !important;
+    padding: 8px !important;
+    margin-top: 5px !important;
+    border: 1px solid #ddd !important;
+    border-radius: 4px !important;
+    font-size: 0.9rem !important;
+}
+
+/* OTROS ESTILOS - VERSION COMPACTA */
+.users-container {
+    padding: 15px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+/* Grilla de Tarjetas más densa */
+.user-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); /* Más columnas */
+    gap: 15px;
+}
+
+/* Tarjeta Individual más pequeña */
+.user-card {
+    background: white;
+    border-radius: 12px;
+    padding: 15px; /* Menos padding */
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    transition: transform 0.2s ease;
+    border: 1px solid #eee;
+    display: flex;
+    flex-direction: column;
+}
+
+.user-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.user-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 12px;
+}
+
+.user-avatar {
+    width: 45px; /* Antes 60px */
+    height: 45px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #f0faff;
+}
+
+.user-info h3 {
+    margin: 0;
+    font-size: 1rem; /* Antes 1.2rem */
+    color: #2c3e50;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.user-info span {
+    font-size: 0.75rem;
+    color: #858796;
+}
+
+.user-body {
+    margin-bottom: 15px;
+    font-size: 0.85rem; /* Texto más pequeño */
+}
+
+.user-body p {
+    margin: 4px 0;
+    color: #5a5c69;
+}
+
+.user-actions {
+    display: flex;
+    gap: 8px;
+    margin-top: auto;
+    padding-top: 10px;
+    border-top: 1px solid #f8f9fc;
+}
+
+.user-actions button {
+    flex: 1;
+    padding: 6px;
+    border-radius: 6px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    cursor: pointer;
+    border: none;
+    transition: background 0.2s ease, transform 0.1s ease;
+}
+
+.btn-edit-admin {
+    background: #29b6d1;
+    color: white;
+}
+
+.btn-edit-admin:hover {
+    background: #1a9ab3;
+    transform: scale(1.03);
+}
+
+.btn-delete-admin {
+    background: #a8e6ef;
+    color: #1a7a8a;
+    border: 1px solid #29b6d1 !important;
+}
+
+.btn-delete-admin:hover {
+    background: #80d5e5;
+    transform: scale(1.03);
+}
+
+/* Controles internos del drawer */
+.drawer-content h3 {
+    margin-top: 0;
+    color: #2c3e50;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 10px;
+}
+
+.drawerBotonesUsuarios {
+    margin-top: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.drawerBotonesUsuarios button {
+    padding: 12px;
+    border-radius: 5px;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.drawerBotonesUsuarios button:first-child {
+    background: #4e73df;
+    color: white;
+}
+
+.drawerBotonesUsuarios button:last-child {
+    background: #eee;
+    color: #333;
+}
