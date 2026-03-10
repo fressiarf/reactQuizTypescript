@@ -3,9 +3,20 @@ import { useNavigate } from 'react-router-dom';
 import ServiceAdopcion from '../services/ServiceAdopcion';
 import '../style/tarjetasAdopcion.css';
 
+type Adopcion = {
+  id: number;
+  nombre: string;
+  especie: string;
+  raza: string;
+  edad: string;
+  genero: string;
+  descripcion: string;
+  foto: string;
+}
+
 function TarjetasAdopcion() {
 
-  const [adopciones, setAdopciones] = useState([]);
+  const [adopciones, setAdopciones] = useState<Adopcion[]>([]);
   const navigate = useNavigate();
 
   const cargarAdopciones = async () => {
@@ -17,7 +28,7 @@ function TarjetasAdopcion() {
     cargarAdopciones();
   }, []);
 
-  const handleAdoptar = (mascotaNombre) => {
+  const handleAdoptar = (mascotaNombre: string) => {
     navigate('/formulario-adopcion', { state: { mascotaNombre } });
   };
 

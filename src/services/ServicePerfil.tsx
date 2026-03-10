@@ -26,7 +26,7 @@ async function getPerfil() {
 
 
 
-async function postPerfil(perfil){
+async function postPerfil(perfil: any){
 
        try {
 
@@ -54,7 +54,7 @@ async function postPerfil(perfil){
 
 
 
-async function patchPerfil(perfil,id){
+async function patchPerfil(perfil: any, id: number){
 
        try {
 
@@ -82,7 +82,7 @@ async function patchPerfil(perfil,id){
 
 
 
-async function deletePerfil(id){
+async function deletePerfil(id: number){
 
        try {
 

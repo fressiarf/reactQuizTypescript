@@ -4,9 +4,16 @@ import MisSolicitudes from '../components/MisSolicitudes'
 import Footer from '../components/Footer'
 import { useNavigate } from 'react-router-dom'
 
+type UsuarioLogueado = {
+  id: number;
+  nombre: string;
+  correo: string;
+  rol: string;
+}
+
 function PagMisSolicitudes() {
   const navigate = useNavigate()
-  const [usuarioLogueado, setUsuarioLogueado] = useState(null)
+  const [usuarioLogueado, setUsuarioLogueado] = useState<UsuarioLogueado | null>(null)
 
   useEffect(() => {
     const sesion = localStorage.getItem('usuarioLogueado')

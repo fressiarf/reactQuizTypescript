@@ -28,7 +28,7 @@ async function getUsuarios() {
 
 
 
-async function postUsuarios(usuario){
+async function postUsuarios(usuario: any){
 
        try {
 
@@ -56,7 +56,7 @@ async function postUsuarios(usuario){
 
 
 
-async function patchUsuarios(usuario, id){
+async function patchUsuarios(usuario: any, id: number){
 
        try {
 
@@ -84,7 +84,7 @@ async function patchUsuarios(usuario, id){
 
 
 
-async function deleteUsuarios(id){
+async function deleteUsuarios(id: number){
 
        try {
 

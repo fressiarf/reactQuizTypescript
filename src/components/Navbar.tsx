@@ -6,10 +6,17 @@ import { Link, useNavigate } from 'react-router-dom'
 import Swal from 'sweetalert2'
 import { FaFacebook, FaInstagram, FaTwitter } from 'react-icons/fa'
 
+type UsuarioNav = {
+  id: number;
+  nombre: string;
+  correo: string;
+  rol: string;
+}
+
 function Navbar() {
 
   const navigate = useNavigate()
-  const [userLogeado, setUserLogeado] = useState(JSON.parse(localStorage.getItem("usuarioLogueado")))
+  const [userLogeado, setUserLogeado] = useState<UsuarioNav | null>(JSON.parse(localStorage.getItem("usuarioLogueado") || 'null'))
 
   const cerrarSesion = () => {
     Swal.fire({

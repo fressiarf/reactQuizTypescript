@@ -13,7 +13,7 @@ const ServiceSolicitud = {
         }
     },
 
-    postSolicitud: async (solicitud) => {
+    postSolicitud: async (solicitud: any) => {
         try {
             const peticion = await fetch(URL_API, {
                 method: 'POST',
@@ -30,7 +30,7 @@ const ServiceSolicitud = {
         }
     },
 
-    deleteSolicitud: async (id) => {
+    deleteSolicitud: async (id: number) => {
         try {
             const peticion = await fetch(`${URL_API}/${id}`, {
                 method: 'DELETE'
@@ -43,7 +43,7 @@ const ServiceSolicitud = {
         }
     },
 
-    patchSolicitud: async (id, actualizacion) => {
+    patchSolicitud: async (id: number, actualizacion: any) => {
         try {
             const peticion = await fetch(`${URL_API}/${id}`, {
                 method: 'PATCH',

@@ -6,6 +6,16 @@ import { useNavigate } from "react-router-dom"
 
 import logo from '../img/logo.png'
 
+type Usuario = {
+  id: number;
+  nombre: string;
+  correo: string;
+  contra: string;
+  rol: string;
+  fotoPerfil: string;
+  telefono: string;
+}
+
 function FormSesion() {
 
   const [contraLogin, setContraLogin] = useState("")
@@ -22,8 +32,8 @@ function FormSesion() {
       });
       return;
     } else {
-      const datosUsuario = await ServiceUsuario.getUsuarios()
-      const usuarioRegistrado = datosUsuario.find(usuario => usuario.correo === correoLogin)
+      const datosUsuario: Usuario[] = await ServiceUsuario.getUsuarios()
+      const usuarioRegistrado = datosUsuario.find((usuario: Usuario) => usuario.correo === correoLogin)
       if (!usuarioRegistrado) {
         Swal.fire({
           title: "Error",
@@ -32,7 +42,7 @@ function FormSesion() {
           confirmButtonText: "OK"
         });
       } else {
-        const credencialesValidas = datosUsuario.find(usuario => usuario.correo === correoLogin && usuario.contra === contraLogin)
+        const credencialesValidas = datosUsuario.find((usuario: Usuario) => usuario.correo === correoLogin && usuario.contra === contraLogin)
         if (!credencialesValidas) {
           Swal.fire({
             title: "Error",

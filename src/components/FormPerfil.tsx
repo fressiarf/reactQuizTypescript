@@ -4,6 +4,16 @@ import Swal from 'sweetalert2';
 import '../style/perfil.css';
 import { useNavigate } from 'react-router-dom';
 
+type UsuarioPerfil = {
+  id: number;
+  nombre: string;
+  correo: string;
+  telefono: string;
+  contra: string;
+  fotoPerfil: string;
+  rol: string;
+}
+
 function FormPerfil() {
 
   const [nombre, setNombre] = useState('');
@@ -31,11 +41,11 @@ function FormPerfil() {
     }
   };
 
-  const handleFileChange = (e) => {
-    const file = e.target.files[0];
+  const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
     if (file) {
       const reader = new FileReader();
-      reader.onloadend = () => setFotoPerfil(reader.result);
+      reader.onloadend = () => setFotoPerfil(reader.result as string);
       reader.readAsDataURL(file);
     }
   };
@@ -51,8 +61,8 @@ function FormPerfil() {
       return;
     }
 
-    const usuarioSesion = JSON.parse(localStorage.getItem('usuarioLogueado'));
-    const objActualizar = { nombre, correo, telefono, fotoPerfil };
+    const usuarioSesion = JSON.parse(localStorage.getItem('usuarioLogueado') || '{}') as UsuarioPerfil;
+    const objActualizar: { nombre: string; correo: string; telefono: string; fotoPerfil: string; contra?: string } = { nombre, correo, telefono, fotoPerfil };
     if (contra) objActualizar.contra = contra;
 
     const respuesta = await ServicePerfil.patchPerfil(objActualizar, usuarioSesion.id);
@@ -86,7 +96,7 @@ function FormPerfil() {
     });
 
     if (resultado.isConfirmed) {
-      const usuarioSesion = JSON.parse(localStorage.getItem('usuarioLogueado'));
+      const usuarioSesion = JSON.parse(localStorage.getItem('usuarioLogueado') || '{}') as UsuarioPerfil;
       const respuesta = await ServicePerfil.deletePerfil(usuarioSesion.id);
 
       if (respuesta) {

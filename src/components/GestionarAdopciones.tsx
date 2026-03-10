@@ -3,8 +3,19 @@ import ServiceAdopcion from '../services/ServiceAdopcion'
 import Swal from 'sweetalert2'
 import "../style/paginaAdmin.css"
 
+type Adopcion = {
+  id: number;
+  nombre: string;
+  especie: string;
+  raza: string;
+  edad: string;
+  genero: string;
+  descripcion: string;
+  foto: string;
+}
+
 function GestionarAdopciones() {
-  const [adopciones, setAdopciones] = useState([])
+  const [adopciones, setAdopciones] = useState<Adopcion[]>([])
   
 
  
@@ -18,7 +29,7 @@ function GestionarAdopciones() {
   }, [])
 
  
-  async function eliminarAdopcion(id, nombre) {
+  async function eliminarAdopcion(id: number, nombre: string) {
     const resultado = await
       Swal.fire({
         title: '¿Eliminar adopcion?',
@@ -39,11 +50,11 @@ function GestionarAdopciones() {
   }
 
  
-  const [gestionarAdopcion, setGestionarAdopcion] = useState(null)
-  const [editandoAdopcion, setEditandoAdopcion] = useState("")
+  const [gestionarAdopcion, setGestionarAdopcion] = useState<Adopcion | null>(null)
+  const [editandoAdopcion, setEditandoAdopcion] = useState<Adopcion>({} as Adopcion)
   const [drawerAbierto, setDrawerAbierto] = useState(false)
 
-  async function abrirDrawer(adopcion) {
+  async function abrirDrawer(adopcion: Adopcion) {
      console.log("Drawer abierto para:", adopcion)
     setGestionarAdopcion(adopcion)
     setEditandoAdopcion(adopcion)

@@ -5,7 +5,13 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import '../style/sidebar.css';
 import logo from '../img/logo2.png';
 
-
+type MenuItem = {
+  path?: string;
+  label?: string;
+  isHome?: boolean;
+  isDivider?: boolean;
+  disabled?: boolean;
+}
 function Sidebar() {
   
   const location = useLocation();
@@ -37,7 +43,7 @@ function Sidebar() {
   };
 
   
-  const menuItems = [
+  const menuItems: MenuItem[] = [
     { path: '/home', label: 'Inicio', isHome: true },
     { path: '/adopcion', label: 'Adopciones' },
     { path: '/perfil', label: 'Mi Perfil' },
@@ -50,13 +56,13 @@ function Sidebar() {
   ];
 
   
-  const checkActive = (path, isHome) => {
+  const checkActive = (path: string | undefined, isHome: boolean | undefined) => {
     if (isHome && (location.pathname === '/' || location.pathname === '/home')) return 'active';
     return location.pathname === path ? 'active' : '';
   };
 
  
-  const navigationLinks = menuItems.map((item, index) => {
+  const navigationLinks = menuItems.map((item: MenuItem, index: number) => {
     if (item.isDivider) {
       return <div key={`divider-${index}`} className="sidebar-divider"></div>;
     }
@@ -73,7 +79,7 @@ function Sidebar() {
       <Nav.Link 
         key={item.path}
         as={Link} 
-        to={item.path} 
+        to={item.path || ''} 
         className={`sidebar-link ${checkActive(item.path, item.isHome)}`}
       >
         <span>{item.label}</span>

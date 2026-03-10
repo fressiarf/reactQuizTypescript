@@ -25,7 +25,7 @@ async function getAdopciones() {
 
 
 
-async function postAdopciones(adopcion){
+async function postAdopciones(adopcion: any){
 
        try {
 
@@ -53,7 +53,7 @@ async function postAdopciones(adopcion){
 
 
 
-async function patchAdopciones(adopcion,id){
+async function patchAdopciones(adopcion: any, id: number){
 
        try {
 
@@ -81,7 +81,7 @@ async function patchAdopciones(adopcion,id){
 
 
 
-async function deleteAdopciones(id){
+async function deleteAdopciones(id: number){
 
        try {
 

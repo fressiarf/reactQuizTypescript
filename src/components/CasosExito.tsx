@@ -2,9 +2,17 @@ import React, { useState, useEffect } from 'react';
 import ServiceCasosExito from '../services/ServiceCasosExito';
 import '../style/casosExito.css';
 
+type CasoExito = {
+  id: number;
+  nombre: string;
+  foto: string;
+  etiqueta: string;
+  historia: string;
+}
+
 function CasosExito() {
 
-  const [casos, setCasos] = useState([]);
+  const [casos, setCasos] = useState<CasoExito[]>([]);
 
   const cargarCasos = async () => {
     const dataCasos = await ServiceCasosExito.getCasosExito();
@@ -19,7 +27,7 @@ function CasosExito() {
 
 
   const listadoCasos = casos.length > 0 ? (
-    casos.map(caso => (
+    casos.map((caso: CasoExito) => (
       <div key={caso.id} className="caso-card">
         <div className="caso-image-wrapper">
           <img 

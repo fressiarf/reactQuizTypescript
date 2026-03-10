@@ -3,8 +3,18 @@ import ServiceUsuario from '../services/ServiceUsuario'
 import Swal from 'sweetalert2'
 import "../style/paginaAdmin.css"
 
+type Usuario = {
+  id: number;
+  nombre: string;
+  correo: string;
+  telefono: string;
+  contra: string;
+  rol: string;
+  fotoPerfil: string;
+}
+
 function MostrarUsuario() {
-  const [usuarios, setUsuarios] = useState([])
+  const [usuarios, setUsuarios] = useState<Usuario[]>([])
   
 
  
@@ -18,7 +28,7 @@ function MostrarUsuario() {
   }, [])
 
 
-  async function eliminarUsuario(id, nombre) {
+  async function eliminarUsuario(id: number, nombre: string) {
     const resultado = await
       Swal.fire({
         title: '¿Eliminar usuario?',
@@ -38,11 +48,11 @@ function MostrarUsuario() {
     }
   }
 
-  const [gestionarUsuario, setGestionar] = useState(null)
+  const [gestionarUsuario, setGestionar] = useState<Usuario | null>(null)
   const [editandoRol, setEditandoRol] = useState("")
   const [drawerAbierto, setDrawerAbierto] = useState(false)
 
-  async function abrirDrawer(usuario) {
+  async function abrirDrawer(usuario: Usuario) {
      console.log("Drawer abierto para:", usuario)
     setGestionar(usuario)
     setEditandoRol(usuario.rol)

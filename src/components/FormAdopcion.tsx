@@ -4,11 +4,21 @@ import Swal from 'sweetalert2';
 import ServiceSolicitud from '../services/ServiceSolicitud';
 import '../style/formAdopcion.css';
 
+type UsuarioLogueado = {
+  id: number;
+  nombre: string;
+  correo: string;
+  telefono: string;
+  contra: string;
+  rol: string;
+  fotoPerfil: string;
+}
+
 function FormAdopcion() {
   const location = useLocation();
   const navigate = useNavigate();
   const [nombreMascota, setNombreMascota] = useState('');
-  const [usuarioLogueado, setUsuarioLogueado] = useState(null);
+  const [usuarioLogueado, setUsuarioLogueado] = useState<UsuarioLogueado | null>(null);
 
   const [nombre, setNombre] = useState('');
   const [correo, setCorreo] = useState('');
@@ -45,7 +55,7 @@ function FormAdopcion() {
     );
   }
 
-  const enviarSolicitud = async (e) => {
+  const enviarSolicitud = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     const nuevaSolicitud = {
@@ -74,7 +84,7 @@ function FormAdopcion() {
     }
   };
 
-  const handleTelefonoChange = (e) => {
+  const handleTelefonoChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value;
     if (value.startsWith('-')) {
       return;

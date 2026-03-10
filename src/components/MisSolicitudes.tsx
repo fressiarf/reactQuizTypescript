@@ -1,14 +1,30 @@
 import React, { useEffect, useState } from 'react'
 import ServiceSolicitud from '../services/ServiceSolicitud'
-import "../style/paginaAdmin.css" // Reusing admin grid styles for user requests
+import "../style/paginaAdmin.css"
 
-function MisSolicitudes({ usuarioId }) {
-  const [solicitudes, setSolicitudes] = useState([])
+type Solicitud = {
+  id: number;
+  usuarioId: number;
+  nombreUsuario: string;
+  correo: string;
+  telefono: string;
+  mascotaSolicitada: string;
+  mensaje: string;
+  fecha: string;
+  estado: string;
+}
+
+type Props = {
+  usuarioId: number;
+}
+
+function MisSolicitudes(props: Props) {
+  const [solicitudes, setSolicitudes] = useState<Solicitud[]>([])
 
   async function cargarMisSolicitudes() {
     const data = await ServiceSolicitud.getSolicitudes()
     if (data) {
-      const misSolicitudes = data.filter(solicitud => solicitud.usuarioId === usuarioId)
+      const misSolicitudes = data.filter((solicitud: Solicitud) => solicitud.usuarioId === props.usuarioId)
       setSolicitudes(misSolicitudes)
     } else {
       setSolicitudes([])
@@ -16,12 +32,12 @@ function MisSolicitudes({ usuarioId }) {
   }
 
   useEffect(() => {
-    if (usuarioId) {
+    if (props.usuarioId) {
       cargarMisSolicitudes()
     }
-  }, [usuarioId])
+  }, [props.usuarioId])
 
-  const getColorEstado = (estado) => {
+  const getColorEstado = (estado: string) => {
     switch(estado) {
       case 'Pendiente': return '#f39c12'
       case 'Aprobada': return '#2cc761'

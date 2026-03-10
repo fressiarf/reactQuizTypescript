@@ -3,13 +3,25 @@ import ServiceSolicitud from '../services/ServiceSolicitud'
 import Swal from 'sweetalert2'
 import "../style/paginaAdmin.css"
 
+type Solicitud = {
+  id: number;
+  usuarioId: number;
+  nombreUsuario: string;
+  correo: string;
+  telefono: string;
+  mascotaSolicitada: string;
+  mensaje: string;
+  fecha: string;
+  estado: string;
+}
+
 function GestionarSolicitudes() {
-  const [solicitudes, setSolicitudes] = useState([])
+  const [solicitudes, setSolicitudes] = useState<Solicitud[]>([])
 
   async function cargarSolicitudes() {
     const data = await ServiceSolicitud.getSolicitudes()
     if (data) {
-      const pendientes = data.filter(solicitud => solicitud.estado === "Pendiente")
+      const pendientes = data.filter((solicitud: Solicitud) => solicitud.estado === "Pendiente")
       setSolicitudes(pendientes)
     } else {
       setSolicitudes([])
@@ -20,7 +32,7 @@ function GestionarSolicitudes() {
     cargarSolicitudes()
   }, [])
 
-  async function eliminarSolicitud(id, nombre) {
+  async function eliminarSolicitud(id: number, nombre: string) {
     const resultado = await Swal.fire({
       title: '¿Rechazar solicitud?',
       text: `Estás a punto de eliminar la solicitud de ${nombre}. Esta acción no se puede deshacer.`,
@@ -39,7 +51,7 @@ function GestionarSolicitudes() {
     }
   }
 
-  async function aprobarSolicitud(id, nombre) {
+  async function aprobarSolicitud(id: number, nombre: string) {
     Swal.fire({
       title: '¡Solicitud Aprobada!',
       text: `Has aprobado la solicitud de ${nombre}. Recuerda contactarlo al correo o teléfono proporcionado.`,
