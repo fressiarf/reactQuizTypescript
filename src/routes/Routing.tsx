@@ -1,5 +1,5 @@
 import React from "react";
-import {BrowserRouter as Router,Routes,Route} from 'react-router-dom'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import Home from "../pages/Home";
 import PagAdmin from "../pages/PagAdmin";
 import CrudUsuarios from "../pages/CrudUsuarios";
@@ -10,23 +10,30 @@ import PagFormAdopcion from "../pages/PagFormAdopcion"
 import AdminAdopcion from "../pages/AdminAdopcion"
 import AdminSolicitudes from "../pages/AdminSolicitudes"
 import PagMisSolicitudes from "../pages/PagMisSolicitudes"
+import PrivateRoutes from "./PrivateRoutes"
 
-const Routing =()=> {
 
-    return(
+const Routing = () => {
+
+    return (
         <Router>
             <Routes>
-                 <Route path="/" element={<Home />} />
-                 <Route path="/home" element={<Home/>}/>
-                <Route path="/registro" element={<CrudUsuarios/>}/>
-                 <Route path="/admin" element={<PagAdmin/>}/>
-                 <Route path="/login" element={<InicioSesion/>}/>
-                 <Route path="/perfil" element={<PerfilUsuario/>}/>
-                 <Route path="/adopcion" element={<PagAdopcion/>}/>
-                 <Route path="/formulario-adopcion" element={<PagFormAdopcion/>}/>
-                 <Route path="/admin-adopcion" element={<AdminAdopcion/>}/>
-                 <Route path="/admin-solicitudes" element={<AdminSolicitudes/>}/>
-                 <Route path="/mis-solicitudes" element={<PagMisSolicitudes/>}/>
+                <Route path="/" element={<Home />} />
+                <Route path="/home" element={<Home />} />
+                <Route path="/registro" element={<CrudUsuarios />} />
+                <Route path="/login" element={<InicioSesion />} />
+                <Route path="/adopcion" element={<PagAdopcion />} />
+
+
+                {/*  De aquía para abajo va mis rutas privadas */}
+                <Route path="/admin" element={<PrivateRoutes><PagAdmin /></PrivateRoutes>} />
+                <Route path="/perfil" element={<PrivateRoutes><PerfilUsuario /></PrivateRoutes>} />
+                <Route path="/formulario-adopcion" element={<PrivateRoutes><PagFormAdopcion /></PrivateRoutes>} />
+                <Route path="/admin-adopcion" element={<PrivateRoutes><AdminAdopcion /></PrivateRoutes>} />
+                <Route path="/admin-solicitudes" element={<PrivateRoutes><AdminSolicitudes /></PrivateRoutes>} />
+                <Route path="/mis-solicitudes" element={<PrivateRoutes><PagMisSolicitudes /></PrivateRoutes>} />
+
+
             </Routes>
         </Router>
 

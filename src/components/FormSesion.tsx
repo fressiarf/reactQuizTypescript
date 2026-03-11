@@ -52,6 +52,7 @@ function FormSesion() {
           });
         } else {
           localStorage.setItem("usuarioLogueado", JSON.stringify(credencialesValidas));
+          localStorage.setItem("token", "token-secreto-123");
           Swal.fire({
             title: "inicio exitoso",
             text: "credenciales correctas",

@@ -31,6 +31,7 @@ function Navbar() {
     }).then((result) => {
       if (result.isConfirmed) {
         localStorage.removeItem("usuarioLogueado")
+        localStorage.removeItem("token")
         setUserLogeado(null)
         navigate("/")
         

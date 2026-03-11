@@ -23,9 +23,8 @@ function FormRegistro() {
     const [telefonoUsuario, setTelefonoUsuario] = useState<string>("");
     const [fotoPerfil, setFotoPerfil] = useState<string>("");
 
-    // 3. Tipamos el evento del input de archivo
     const handleFileChange = (e: ChangeEvent<HTMLInputElement>) => {
-        const file = e.target.files?.[0]; // El '?' es por si es null
+        const file = e.target.files?.[0]; 
         if (file) {
             const reader = new FileReader();
             reader.onloadend = () => {
